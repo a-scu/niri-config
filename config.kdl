@@ -1,0 +1,8 @@
+include "./config/animation.kdl"
+include "./config/autostart.kdl"
+include "./config/binds.kdl"
+include "./config/display.kdl"
+include "./config/input.kdl"
+include "./config/layout.kdl"
+include "./config/misc.kdl"
+include "./config/window-rules.kdl"

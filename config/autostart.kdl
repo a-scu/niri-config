@@ -1,0 +1,2 @@
+spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-sh-at-startup "brave-origin-nightly --class=brave-startup"
