@@ -1,0 +1,48 @@
+{
+ "status_bar": {
+  "active_language_button": false
+ },
+ "git_panel": {
+  "button": false
+ },
+ "collaboration_panel": {
+  "button": false
+ },
+ "outline_panel": {
+  "button": false
+ },
+ "debugger": {
+  "button": false
+ },
+ "search": {
+  "button": false
+ },
+ "diagnostics": {
+  "button": false
+ },
+ "global_lsp_settings": {
+  "button": false
+ },
+ "window_decorations": "server",
+ "project_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "button": false,
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "cli_default_open_behavior": "existing_window",
+  "icon_theme": {
+  "mode": "light",
+  "light": "Zed (Default)",
+  "dark": "Zed (Default)"
+ },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Sergio's Tech Code in Black (OLED Theme)",
+  },
+}

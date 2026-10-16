@@ -1,0 +1,14 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 200
+        numlock
+        xkb {
+            layout "us"
+            variant "altgr-intl"
+        }
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="100%"
+}

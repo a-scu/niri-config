@@ -1,0 +1,7 @@
+[brightness]
+enable_ddcutil = true
+[location]
+# Opciones para ubicación fija:
+name = "Isidro Casanova, Argentina"
+latitude = -34.7042
+longitude = -58.5804

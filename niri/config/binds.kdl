@@ -1,0 +1,138 @@
+binds {
+    // ─── Applications ───
+    Mod+ALT+L         hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "noctalia msg session lock"; }
+    Mod+SPACE         hotkey-overlay-title="Open App Launcher: noctalia launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Return        hotkey-overlay-title="Open Terminal: kitty" { spawn "kitty"; }
+    Mod+Shift+Return  hotkey-overlay-title="Terminal with Fastfetch" { spawn "kitty" "sh" "-c" "fastfetch; exec $SHELL"; }
+    Mod+E             hotkey-overlay-title="File Manager: nautilus" { spawn-sh "nautilus --new-window"; }
+    Mod+W             hotkey-overlay-title="Brave Browser" { spawn "brave-origin-nightly" ; }
+    Mod+D             hotkey-overlay-title="Vesktop" { spawn "vesktop"; }
+    Mod+Z             hotkey-overlay-title="Zeditor" { spawn "zeditor"; }
+    Mod+A             hotkey-overlay-title="Antigravity" { spawn-sh "antigravity"; }
+    Mod+S             hotkey-overlay-title="Scrcpy" { spawn "scrcpy"; }
+
+    // ─── Movement ───
+    Mod+Left              { focus-column-left; }
+    Mod+Right             { focus-column-right; }
+    Mod+WheelScrollLeft   { focus-column-left; }
+    Mod+WheelScrollRight  { focus-column-right; }
+
+    Mod+Up       { focus-window-or-monitor-up; }
+    Mod+Down     { focus-window-or-monitor-down; }
+    // Mod+Up       { focus-window-or-workspace-up; }
+    // Mod+Down     { focus-window-or-workspace-down; }
+
+    Mod+Ctrl+Left   { move-column-left; }
+    Mod+Ctrl+Right  { move-column-right; }
+    Mod+Ctrl+Up     { move-column-to-monitor-up; }
+    Mod+Ctrl+Down   { move-column-to-monitor-down; }
+    // Mod+Ctrl+Up     { spawn "sh" "-c" "home/scu/.config/niri/scripts/move_column.sh up"; }
+    // Mod+Ctrl+Down   { spawn "sh" "-c" "home/scu/.config/niri/scripts/move_column.sh down"; }
+
+    Mod+Ctrl+WheelScrollLeft   { move-column-left; }
+    Mod+Ctrl+WheelScrollRight  { move-column-right; }
+    Mod+Ctrl+WheelScrollUp     { move-column-to-monitor-up; }
+    Mod+Ctrl+WheelScrollDown   { move-column-to-monitor-down; }
+
+    Mod+Home       { focus-column-first; }
+    Mod+End        { focus-column-last; }
+    Mod+Ctrl+Home  { move-column-to-first; }
+    Mod+Ctrl+End   { move-column-to-last; }
+
+    // ─── Window movement ───
+    Mod+Shift+Up     { move-window-up-or-to-workspace-up; }
+    Mod+Shift+Down   { move-window-down-or-to-workspace-down; }
+    Mod+Shift+Left   { consume-or-expel-window-left; }
+    Mod+Shift+Right  { consume-or-expel-window-right; }
+
+    // ─── Workspace Movement ───
+    Mod+Page_Up          { focus-workspace-up; }
+    Mod+Page_Down        { focus-workspace-down; }
+    Mod+WheelScrollUp    { focus-window-or-workspace-up; }
+    Mod+WheelScrollDown  { focus-window-or-workspace-down; }
+    Mod+Ctrl+Page_Up     { move-column-to-workspace-up; }
+    Mod+Ctrl+Page_Down   { move-column-to-workspace-down; }
+
+    // ─── FullScreen ───
+    Mod+F        { maximize-column; }
+    Mod+Shift+F  { fullscreen-window; }
+    Mod+M        { maximize-window-to-edges; }
+    Mod+Ctrl+F   { expand-column-to-available-width; }
+
+    // ─── Center Columns ───
+    Mod+C                 { center-column; }
+    Mod+MouseMiddle       { center-column; }
+    Mod+Ctrl+C            { center-visible-columns; }
+    Mod+Ctrl+MouseMiddle  { center-visible-columns; }
+
+    // ─── Column Widht / Height ───
+    Mod+R             { switch-preset-column-width; }
+    Mod+Shift+R       { switch-preset-column-width-back; }
+    Mod+Ctrl+R        { switch-preset-window-height; }
+    Mod+Ctrl+Shift+R  { reset-window-height; }
+    Mod+1             { set-column-width "25%"; }
+    Mod+2             { set-column-width "33.33333%"; }
+    Mod+3             { set-column-width "50%"; }
+    Mod+4             { set-column-width "66.66667%"; }
+    Mod+5             { set-column-width "75%"; }
+    Mod+9             { spawn "bash" "/home/scu/.config/niri/scripts/force_19.5:9.sh"; }
+    Mod+0             { spawn "bash" "/home/scu/.config/niri/scripts/force_16:9.sh"; }
+    Mod+Minus         { set-column-width "-5%"; }
+    Mod+Equal         { set-column-width "+5%"; }
+    Mod+Shift+Minus   { set-column-width "-10%"; }
+    Mod+Shift+Equal   { set-column-width "+10%"; }
+
+    // ─── Media Controls ───
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute         allow-when-locked=true { spawn-sh "noctalia msg volume-mute"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn-sh "noctalia msg mic-mute"; }
+    XF86AudioNext         allow-when-locked=true { spawn-sh "noctalia msg media next"; }
+    XF86AudioPrev         allow-when-locked=true { spawn-sh "noctalia msg media previous"; }
+    XF86AudioPlay         allow-when-locked=true { spawn-sh "noctalia msg media toggle"; }
+    XF86AudioPause        allow-when-locked=true { spawn-sh "noctalia msg media toggle"; }
+
+    // ─── Monitors On/Off ───
+    Mod+P        allow-when-locked=true { spawn "niri" "msg" "output" "DP-2" "off"; }
+    Mod+Shift+P  allow-when-locked=true { spawn "niri" "msg" "output" "DP-2" "on"; }
+    Mod+O        allow-when-locked=true { spawn "niri" "msg" "output" "DP-1" "off"; }
+    Mod+Shift+O  allow-when-locked=true { spawn "niri" "msg" "output" "DP-1" "on"; }
+
+    // ─── Monitors Brightness ───
+    Mod+B        allow-when-locked=true { spawn "noctalia" "msg" "brightness-down" "DP-1" "5"; }
+    Mod+Shift+B  allow-when-locked=true { spawn "noctalia" "msg" "brightness-up" "DP-1" "5"; }
+    Mod+N        allow-when-locked=true { spawn "noctalia" "msg" "brightness-down" "DP-2" "5"; }
+    Mod+Shift+N  allow-when-locked=true { spawn "noctalia" "msg" "brightness-up" "DP-2" "5"; }
+
+
+    // ─── ───
+    Mod+Shift+ESCAPE  { show-hotkey-overlay; }
+    Alt+Tab           repeat=false { toggle-overview; }
+    Alt+Q             repeat=true { close-window; }
+
+    // ───  ───
+    Mod+Y  { spawn "~/.config/niri/scripts/window_center_when_focused_toggle.sh"; }
+    Mod+I  { spawn "~/.config/niri/scripts/cycle_scale.sh"; }
+
+    // ───  ───
+    Mod+V        { toggle-window-floating; }
+    Mod+Shift+V  { switch-focus-between-floating-and-tiling; }
+    Mod+T        { toggle-column-tabbed-display; }
+
+    // ─── Switch Layouts ───
+    // Mod+L        { switch-layout "next"; }
+    // Mod+Shift+L  { switch-layout "prev"; }
+
+    // ─── Screenshots ───
+    CTRL+Shift+1  { screenshot; }
+    CTRL+Shift+2  { screenshot-screen; }
+    CTRL+Shift+3  { screenshot-window; }
+
+    // ─── Emergency Escape Key ───
+    // Use this when a fullscreen app blocks your keybinds.
+    // It disables any active keyboard shortcut inhibitor, restoring control.
+    Mod+ESCAPE  allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // ─── Exit / Power ───
+    CTRL+ALT+Delete  { quit; }
+}
